@@ -5,6 +5,8 @@
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake And Ladder Game");
+
+            GameStart.GameIsStart();
            
         }
     }
