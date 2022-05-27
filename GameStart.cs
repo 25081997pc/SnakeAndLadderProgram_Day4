@@ -8,20 +8,44 @@ namespace SnakeAndLadder
 {
     public class GameStart
     {
-       
+        const int NO_PLAY = 1;
+        const int LADDER = 2;
+        const int SNAKE = 3;
         public static void GameIsStart()
         {
             int players = 1;
             int Player1Position = 0;
-
+            
             Console.WriteLine("Player1 Position: " + Player1Position);
 
             Random random = new Random();
-            int Die = random.Next(1, 7);
 
-            Console.WriteLine("Rolling the Die: " + Die);
+            int DieRoll = random.Next(1, 7);
+            
+            Console.WriteLine("Rolling the Die: " + DieRoll);
 
-        }
-         
+            int check = random.Next(1, 4);
+            switch (check)
+            {
+                case NO_PLAY:
+                    Player1Position = Player1Position + 0;
+                    break;
+                case LADDER:
+                    Player1Position = Player1Position + DieRoll;
+                    break;
+                case SNAKE:
+                    Player1Position = Player1Position - DieRoll;
+                    break;
+
+            }
+            Console.WriteLine("Position of Player1 is: " + Player1Position);
+        }       
+
     }
-}
+}   
+            
+
+        
+         
+    
+
