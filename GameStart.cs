@@ -15,14 +15,15 @@ namespace SnakeAndLadder
         {
             int players = 1;
             int Player1Position = 0;
+            int DiceCount = 0;
             
             Console.WriteLine("Player1 Position: " + Player1Position);
 
             Random random = new Random();
-            while(Player1Position != 100 || Player1Position > 100)
+            while(Player1Position != 100 || Player1Position < 100)
             {
                 int DieRoll = random.Next(1, 7);
-
+                DiceCount++;
                 Console.WriteLine("Rolling the Die: " + DieRoll);
 
                 int check = random.Next(1, 4);
@@ -44,6 +45,7 @@ namespace SnakeAndLadder
 
             }
             Console.WriteLine("Player1 reached to Winning Position at 100");
+            Console.WriteLine("{0} times Roll the Die: ", DiceCount);
         }       
 
     }
