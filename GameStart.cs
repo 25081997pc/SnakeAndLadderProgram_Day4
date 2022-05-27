@@ -19,7 +19,7 @@ namespace SnakeAndLadder
             Console.WriteLine("Player1 Position: " + Player1Position);
 
             Random random = new Random();
-            while(Player1Position != 100 || Player1Position < 100)
+            while(Player1Position != 100 || Player1Position > 100)
             {
                 int DieRoll = random.Next(1, 7);
 
@@ -41,8 +41,9 @@ namespace SnakeAndLadder
                 if (Player1Position < 0)
                     Player1Position = 0;
                 Console.WriteLine("Position of Player1 is: " + Player1Position);
+
             }
-            
+            Console.WriteLine("Player1 reached to Winning Position at 100");
         }       
 
     }
