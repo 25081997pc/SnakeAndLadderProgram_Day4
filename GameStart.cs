@@ -19,26 +19,30 @@ namespace SnakeAndLadder
             Console.WriteLine("Player1 Position: " + Player1Position);
 
             Random random = new Random();
-
-            int DieRoll = random.Next(1, 7);
-            
-            Console.WriteLine("Rolling the Die: " + DieRoll);
-
-            int check = random.Next(1, 4);
-            switch (check)
+            while(Player1Position != 100 || Player1Position < 100)
             {
-                case NO_PLAY:
-                    Player1Position = Player1Position + 0;
-                    break;
-                case LADDER:
-                    Player1Position = Player1Position + DieRoll;
-                    break;
-                case SNAKE:
-                    Player1Position = Player1Position - DieRoll;
-                    break;
+                int DieRoll = random.Next(1, 7);
 
+                Console.WriteLine("Rolling the Die: " + DieRoll);
+
+                int check = random.Next(1, 4);
+                switch (check)
+                {
+                    case NO_PLAY:
+                        Player1Position = Player1Position + 0;
+                        break;
+                    case LADDER:
+                        Player1Position = Player1Position + DieRoll;
+                        break;
+                    case SNAKE:
+                        Player1Position = Player1Position - DieRoll;
+                        break;
+                }
+                if (Player1Position < 0)
+                    Player1Position = 0;
+                Console.WriteLine("Position of Player1 is: " + Player1Position);
             }
-            Console.WriteLine("Position of Player1 is: " + Player1Position);
+            
         }       
 
     }
