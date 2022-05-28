@@ -6,8 +6,10 @@
         {
             Console.WriteLine("Welcome to Snake And Ladder Game");
 
-            GameStart.GameIsStart();
-           
-        }
+            //GameStart.GameIsStart();
+
+            GamePlay.GameIsPlay();
+        }    
+              
     }
 }
