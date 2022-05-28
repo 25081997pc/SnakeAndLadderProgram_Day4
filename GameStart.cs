@@ -34,6 +34,8 @@ namespace SnakeAndLadder
                         break;
                     case LADDER:
                         Player1Position = Player1Position + DieRoll;
+                        if (Player1Position > 100)
+                            Player1Position = Player1Position - DieRoll;
                         break;
                     case SNAKE:
                         Player1Position = Player1Position - DieRoll;
